@@ -23,7 +23,6 @@ def predict():
             img_bytes = file
             tensor = transform_image(img_bytes)
             prediction = get_prediction(tensor)
-            print(type(prediction))
             data = {'prediction': int(prediction)}
             return jsonify(data)
         except:
