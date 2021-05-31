@@ -1,12 +1,13 @@
 from flask import Flask, request, jsonify
 
-from utils import transform_image, get_prediction
+from app.utils import transform_image, get_prediction
 
 app = Flask(__name__)
 
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
 def allowed_file(filename):
-    # xxx.png
+    # check if file is an allowed extension
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 

@@ -2,12 +2,8 @@ import tensorflow as tf
 import numpy as np
 import PIL
 
-mnist = tf.keras.datasets.mnist
-
-(x_train, y_train),(x_test, y_test) = mnist.load_data()
-x_train, x_test = x_train / 255.0, x_test / 255.0
-
-model = tf.keras.models.load_model('saved_model')
+#Load saved model
+model = tf.keras.models.load_model('app/saved_model')
 
 probability_model = tf.keras.Sequential([model, 
                                          tf.keras.layers.Softmax()])
