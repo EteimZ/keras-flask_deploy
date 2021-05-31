@@ -1,7 +1,6 @@
 import requests 
 
-# https://your-heroku-app-name.herokuapp.com/predict
-# http://localhost:5000/predict
-resp = requests.post("http://localhost:5000/predict", files={'file': open('eight.png', 'rb')})
+# https://keras-flask.herokuapp.com/predict
+resp = requests.post("https://keras-flask.herokuapp.com/predict", files={'file': open('eight.png', 'rb')})
 
 print(resp.text)
